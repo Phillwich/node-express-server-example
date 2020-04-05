@@ -24,6 +24,7 @@ const updateUser = (req, res, next) => {
 }
 
 const getUser = (req, res, next) => {
+  // If userId in query parameters return specific user otherwise all users
   if (req.query) {
     const { userId } = req.query
     const index = userDummyData.findIndex(dummyUser => dummyUser.id === userId)
