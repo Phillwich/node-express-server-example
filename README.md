@@ -13,15 +13,3 @@ Run this API on your machine:
 3. Run <code> npm run start </code> in your terminal
 
 
-
-* **URL**
-
-  /users
-
-* **Method:**
-
-  `GET`
-  
-*  **URL Params**
- 
-   `id?userId`
