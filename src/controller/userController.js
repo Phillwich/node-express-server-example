@@ -13,7 +13,7 @@ const addUser = async (req, res, next) => {
 const deleteUser = async (req, res, next) => {
   if (!req.query.userId) return next(new CustomError('Missing userId in query parameters', 400))
   const { userId } = req.query
-  const dummyData = JSON.parse(await fs.readFileSync(__dirname + "/dummyData.json", "utf8"))
+  const dummyData = JSON.parse(await fs.readFileSync(__dirname +  "/dummyData.json", "utf8"))
   const index = dummyData.user.findIndex(dummyUser => dummyUser.id === userId)
   dummyData.user.splice(index, 1)
   await fs.writeFileSync(__dirname + '/dummyData.json', JSON.stringify(dummyData))
