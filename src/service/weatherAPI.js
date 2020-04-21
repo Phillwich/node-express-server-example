@@ -1,0 +1,1 @@
+// Here could be a implemention for a weather api to retrieve extern information
