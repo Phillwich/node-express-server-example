@@ -1,6 +1,10 @@
 const routes = require('express').Router()
-const middleware = require('./middleware')
-const { addUser, deleteUser, updateUser, getUser } = require('./userController')
+const middleware = require('./middleware/middleware')
+const { addUser,
+  deleteUser,
+  updateUser,
+  getUser } = require('./controller/userController')
+
 
 module.exports = () => {
   // HTTP-Method: GET on localhost:5000/api/v1/user
@@ -11,5 +15,12 @@ module.exports = () => {
   routes.put('/user', middleware, updateUser)
   // HTTP-Method: DELETE on localhost:5000/api/v1/user
   routes.delete('/user', middleware, deleteUser)
+
+  // HTTP-Method: GET on localhost:5000/api/v1/car
+  routes.get('/car', /* carControllerFunction */)
+
   return routes
 }
+
+
+

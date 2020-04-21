@@ -1,6 +1,6 @@
 # Example of an API with Node.js and express
 
-This should be a simple API without validation and error handling for showing the main structure of an API with Node.js and express. 
+This is an example API for university
 
 Requirements: 
 - Node.js installed
@@ -8,7 +8,7 @@ Requirements:
 
 
 Run this API on your machine:
-1. Clone this repository
+1. Clone or download this repository
 2. Run <code> npm i </code> in your terminal
 3. Run <code> npm run start </code> in your terminal
 

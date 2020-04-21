@@ -1,7 +1,9 @@
 const fs = require('fs')
+const CustomError = require('../error/CustomError')
 
 const addUser = async (req, res, next) => {
-  if (!req.body.user) return res.status(400).send('Missing user data')
+  // if (!req.body.user) return res.status(400).send('Missing user data')
+  if (!req.body.user) return next(new CustomError('Missing userdata', 400))
   const { user } = req.body
   const dummyData = JSON.parse(await fs.readFileSync(__dirname + "/dummyData.json", "utf8"))
   dummyData.user.push(user)
@@ -10,7 +12,7 @@ const addUser = async (req, res, next) => {
 }
 
 const deleteUser = async (req, res, next) => {
-  if (!req.query.userId) return res.status(400).send('Missing userId in query parameters')
+  if (!req.query.userId) return next(new CustomError('Missing userId in query parameters', 400))
   const { userId } = req.query
   const dummyData = JSON.parse(await fs.readFileSync(__dirname + "/dummyData.json", "utf8"))
   const index = dummyData.user.findIndex(dummyUser => dummyUser.id === userId)
